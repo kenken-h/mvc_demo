@@ -1,0 +1,14 @@
+<dataset>
+    <shops id="1" OPTLOCK="0" name="店舗名００１" phone="03033314444" email="tenpo001@xxx.com" kaitenBi="2014/01/01" emplNumber="5"/>
+    <shops id="2" OPTLOCK="0" name="店舗名００２" phone="03033325555" email="tenpo002@xxx.com" kaitenBi="2014/02/01" emplNumber="6"/>
+    <shops id="3" OPTLOCK="0" name="店舗名００３" phone="03033335555" email="tenpo003@xxx.com" kaitenBi="2014/03/01" emplNumber="6"/>
+    <shops id="4" OPTLOCK="0" name="店舗名００４" phone="03033345555" email="tenpo004@xxx.com" kaitenBi="2014/04/01" emplNumber="6"/>
+    <shops id="5" OPTLOCK="0" name="店舗名００５" phone="03033355555" email="tenpo005@xxx.com" kaitenBi="2014/05/01" emplNumber="6"/>
+    <shops id="6" OPTLOCK="0" name="店舗名００６" phone="03033365555" email="tenpo006@xxx.com" kaitenBi="2014/06/01" emplNumber="6"/>
+    <shops id="7" OPTLOCK="0" name="店舗名００７" phone="03033375555" email="tenpo007@xxx.com" kaitenBi="2014/07/01" emplNumber="6"/>
+    <shops id="8" OPTLOCK="0" name="店舗名００８" phone="03033385555" email="tenpo008@xxx.com" kaitenBi="2014/08/01" emplNumber="6"/>
+    <shops id="9" OPTLOCK="0" name="店舗名００９" phone="03033395555" email="tenpo009@xxx.com" kaitenBi="2014/09/01" emplNumber="7"/>
+    <shops id="10" OPTLOCK="0" name="店舗名０１０" phone="03034035555" email="tenpo010@xxx.com" kaitenBi="2014/10/01" emplNumber="7"/>
+    <shops id="11" OPTLOCK="0" name="店舗名０１１" phone="03034135555" email="tenpo011@xxx.com" kaitenBi="2014/11/01" emplNumber="7"/>
+    <shops id="12" OPTLOCK="0" name="店舗名０１２" phone="03034235555" email="tenpo012@xxx.com" kaitenBi="2014/12/01" emplNumber="7"/>
+</dataset>
