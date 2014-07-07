@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragment/frag01 :: htmlhead"
+	th:with="title='Spring MVC デモ'"></head>
+
+<style>
+.contents { margin-top: 30px; }
+.table-container{ width:1100px;  }
+.btn_edit{ font-size: 14px; }
+.btn_delete{ font-size: 14px; }
+.alignRight { text-align: right; }
+</style>
+<script>
+<!--
+$(document).ready(function () {
+    var oTable = $("#shops").dataTable({
+    	"bProcessing": true,
+    	"bServerSide": true,
+    	"bLengthChange": true,
+    	"sAjaxSource": "/mvcdemo/shop/page.html",
+    	"aLengthMenu": [[10, 20,],[10, 20]],
+    	"aoColumns": [
+    		 {"sTitle": "ID",      "mData": "id", "sWidth": 40, "sClass": "center" },
+    		 {"sTitle": "店舗名",   "mData": "name", "sWidth": 200 },
+    		 {"sTitle": "電話番号", "mData": "phone", "sWidth": 70 },
+    		 {"sTitle": "メール",    "mData": "email", "sWidth": 240 },
+    		 {"sTitle": "開店日",   "mData": "kaitenBi", "sWidth": 60 },
+    		 {"sTitle": "従業員数", "mData": "emplNumber", "sWidth": 100, "sClass": "alignRight",
+    		 	"fnCreatedCell": function (td, cellData, rowData, row, col) {
+					if ( cellData > 15 ) {
+    	    	        $(td).css('color', 'red');
+    	    	    }
+    			 }
+    		 },
+    	],
+    	"fnServerData": function(sSource, aoData, fnCallback) {
+    		$.ajax({
+    			"dataType" : 'json',
+    			"contentType" : "application/json;charset=UTF-8",
+    			"type" : "GET",
+    			"url" : sSource,
+    			"data" : aoData,
+    			"success" : fnCallback
+    		});
+    	},
+    	"oLanguage": {
+            "sLengthMenu": "表示 _MENU_",
+            "sSearch": "検索:",
+            "oPaginate": {
+            	"sFirst": "先頭 ",
+            	"sLast": " 最後",
+                "sNext": " 次 ",
+                "sPrevious": " 前"
+            },
+            "sInfo": "_START_件 ～ _END_件 / _TOTAL_件"
+        },
+    	"sPaginationType" : "full_numbers"
+    }); //dataTables
+});
+-->
+</script>
+
+<body>
+
+<!-- $$$ Navigation Bar $$$$$  -->	
+<div th:include="fragment/frag01 :: navbar"></div>
+
+<div class="contents">
+<div class="container">
+
+<!-- $$$ Contents Header $$$$$  -->	
+<div class="row">
+<div class="col-lg-12">
+	<h1 class="page-header"> 店舗一覧
+		<small>(ajaxバージョン)</small>
+	</h1>
+</div>
+</div>
+
+<!-- $$$ Contents Body $$$$$  -->	
+<div class="row">
+<div class="col-lg-12">
+  <div class="table-container">
+    <table id="shops" class="display">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>店舗名</th>
+          <th>電話番号</th>
+          <th>メール</th>
+          <th>開店日</th>
+          <th>従業員数</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <br /><br />
+  </div>
+  
+  <!-- $$$ Contents Footer $$$$$  -->	
+  <div th:include="fragment/frag01 :: footer"></div>
+</div>
+</div>
+
+</div> <!-- Container END -->
+</div> <!-- Contents END -->
+
+</body>
+</html>
