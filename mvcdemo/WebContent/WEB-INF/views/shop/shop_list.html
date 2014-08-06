@@ -49,7 +49,14 @@ $(document).ready(function () {
      		 		be.button();
      		 		be.on('click',function(){
      		 			fBtn = true;
-     		 			alert("Edit:"+cellData);
+     		 			//ajax で get して成功時はダイアログを表示
+     		 			$.getJSON("/mvcdemo/shop/edit/" + cellData + ".html", {}, 
+     		 				function(shop){
+     	     		 			$("#myModalLabel").html("店舗 (id="+cellData+") を修正してください");
+     	     		 			setShop(shop.name, shop.phone, shop.email,
+     	     		 					shop.kaitenBi, shop.emplNumber);
+     	     		 			$('#myModal').modal('show');
+     		 			});
                     });
      		 		$(td).empty();
                     $(td).prepend(bd);    		 		
@@ -82,6 +89,9 @@ $(document).ready(function () {
     	"sPaginationType" : "full_numbers"
     }); //dataTables
     $("#shop-create").click(function () {
+		$("#myModalLabel").html("新規店舗を追加してください。");
+		setShop("", "", "", "", "");	 	
+	 	$('#myModal').modal('show');
     });
     
     $('#shops tbody').on( 'click', 'tr', function () {
@@ -91,6 +101,13 @@ $(document).ready(function () {
     		fBtn = false;
     	}
     } );
+    function setShop(name, phone, email, kaitenBi, emplNumber) {
+		$("#name").val(name);
+		$("#phone").val(phone);
+		$("#email").val(email);
+		$("#kaitenBi").val(kaitenBi);
+		$("#emplNumber").val(emplNumber);
+    }
 });
 -->
 </script>
@@ -142,6 +159,8 @@ $(document).ready(function () {
 
 </div> <!-- Container END -->
 </div> <!-- Contents END -->
+
+<div th:include="fragment/frag01 :: shop-create-modal"></div>
 
 </body>
 </html>

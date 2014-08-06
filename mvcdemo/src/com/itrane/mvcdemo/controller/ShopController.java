@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,6 +39,8 @@ public class ShopController {
 	public ModelAndView shopList() {
 		logger.debug("");
 		ModelAndView mav = new ModelAndView("/shop/shop_list");
+		Shop shop = new Shop();
+		mav.addObject("shop", shop);
 		return mav;
 	}
 
@@ -135,5 +138,26 @@ public class ShopController {
 		}
 		shopService.create(shops);
 		return mav;
+	}
+	
+	@RequestMapping(value="/delete/{id}",
+			produces="text/html;charset=UTF-8", method=RequestMethod.GET)
+	public @ResponseBody String deleteShop(@PathVariable Integer id) {
+		
+		logger.debug("id=" + id);
+		ModelAndView mav = new ModelAndView("redirect:/shop/list.html");		
+		
+		//Shop shop = shopService.delete(id);
+		//String message = "店舗 "+shop.getName()+" を削除しました.";
+		String message = "店舗 を削除しました.";
+		return toJson(message);
+	}
+
+	@RequestMapping(value = "/edit/{id}",
+			produces="text/html;charset=UTF-8", method=RequestMethod.GET)
+	public @ResponseBody String editShop(@PathVariable Integer id) {
+		Shop shop = shopService.findById(id);
+		logger.debug("id=" + id + " shop.id=" + shop.getId() + " name=" + shop.getName());
+		return toJson(shop);
 	}
 }
