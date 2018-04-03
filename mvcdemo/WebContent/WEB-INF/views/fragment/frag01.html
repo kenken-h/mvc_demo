@@ -12,16 +12,16 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.1/css/jquery.dataTables.css" />
 
-    <!-- HTML5 shim, IE6-8 で HTML5 要素をサポートする -->
+    <!-- HTML5 shim, IE6-8 で HTML5 要素をサポートする  TEST -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
+
     <!-- JavaScript : jquery, bootstrap, custom -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="//cdn.datatables.net/1.10.1/js/jquery.dataTables.js"></script>
-</head>      
+</head>
 
 <body>
 
@@ -69,44 +69,44 @@
       </div>
       <div class="modal-body">
 
-    <form class="form-horizontal" role="form" action="#" th:action="@{/mvc/edit}" 
+    <form class="form-horizontal" role="form" action="#" th:action="@{/mvc/edit}"
      		th:object="${shop}" method="post">
 	<fieldset>
-	<div class="form-group">  
+	<div class="form-group">
 		<label class="col-sm-2 control-label" for="name">店舗名</label>
-		<div class="col-sm-10 controls">  
+		<div class="col-sm-10 controls">
 			<input type="text" th:field="*{name}" placeholder="店舗名"
 				 th:errorclass="fieldError" maxlength="20" class="form-control" />
 			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">不正な入力</span>
 		</div>
 	</div>
-	<div class="form-group">  
+	<div class="form-group">
 		<label class="col-sm-2 control-label" for="phone">電話番号</label>
-		<div class="col-sm-10 controls">  
+		<div class="col-sm-10 controls">
 			<input type="text" th:field="*{phone}" placeholder="電話番号"
 				 th:errorclass="fieldError" maxlength="13" class="form-control" />
 			<span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">不正な入力</span>
 		</div>
 	</div>
-	<div class="form-group">  
+	<div class="form-group">
 		<label class="col-sm-2 control-label" for="email">メール</label>
-		<div class="col-sm-10 controls">  
+		<div class="col-sm-10 controls">
 			<input type="text" th:field="*{email}" placeholder="メールアドレス"
 				 th:errorclass="fieldError" maxlength="50" class="form-control" />
 			<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">不正な入力</span>
 		</div>
 	</div>
-	<div class="form-group">  
+	<div class="form-group">
 		<label class="col-sm-2 control-label" for="kaitenBi">開店日</label>
-		<div class="col-sm-10 controls">  
+		<div class="col-sm-10 controls">
 			<input type="text" th:field="*{kaitenBi}"
 				 th:errorclass="fieldError" maxlength="13" class="form-control" />
 			<span th:if="${#fields.hasErrors('kaitenBi')}" th:errors="*{kaitenBi}">不正な入力</span>
 		</div>
 	</div>
-	<div class="form-group">  
+	<div class="form-group">
 		<label class="col-sm-2 control-label" for="emplNumber">従業員数</label>
-		<div class="col-sm-10 controls">  
+		<div class="col-sm-10 controls">
 			<input type="text" th:field="*{emplNumber}"
 				 th:errorclass="fieldError" maxlength="3" class="form-control" />
 			<span th:if="${#fields.hasErrors('emplNumber')}" th:errors="*{emplNumber}">不正な入力</span>
